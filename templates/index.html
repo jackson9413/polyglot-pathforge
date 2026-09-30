@@ -1,0 +1,142 @@
+<<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>polyglot-pathforge · language learning roadmap</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">🦊</div>
+      <div class="brand-text">
+        <h1>polyglot-pathforge</h1>
+        <p class="tag">local-first self-directed language-learning roadmap workbench</p>
+      </div>
+    </div>
+    <div class="meta">
+      <span class="pill">Flask · SQLite · vanilla JS</span>
+      <span class="pill">no API keys</span>
+      <span class="pill">no LLM</span>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="panel brief-panel">
+      <h2>1. Your learner brief</h2>
+      <p class="hint">
+        Describe your situation in plain English. The more you share (current level, target level, weekly hours, horizon, goals, style, constraints), the tighter the roadmap. Example:
+      </p>
+      <pre class="example">I want to learn Mandarin Chinese. I'm an absolute beginner (zero background). My native is English. I want to reach B1 conversation level in 12 months so I can hold a 5-minute chat with my partner's parents. I have about 7 hours/week, structured grammar-first style, taking a weekly italki lesson. No immersion access — no native speakers nearby.</pre>
+
+      <textarea id="brief-input" placeholder="Type or paste your learner brief here…" rows="10"></textarea>
+
+      <div class="actions">
+        <button id="run-btn" class="primary">Forge roadmap →</button>
+        <button id="sample-btn" class="ghost">Load sample</button>
+        <button id="clear-btn" class="ghost">Clear</button>
+      </div>
+    </section>
+
+    <section id="result-section" class="hidden">
+      <div id="error-box" class="error hidden"></div>
+
+      <article id="result-card" class="panel result-panel hidden">
+        <header class="result-header">
+          <div>
+            <h2 id="result-title">Roadmap</h2>
+            <p id="result-subtitle" class="sub"></p>
+          </div>
+          <div class="verdict" id="verdict-pill">—</div>
+        </header>
+
+        <section class="block profile-block">
+          <h3>Detected profile</h3>
+          <div id="profile-grid" class="grid"></div>
+        </section>
+
+        <section class="block feasibility-block">
+          <h3>Feasibility</h3>
+          <div id="feasibility-content"></div>
+        </section>
+
+        <section class="block score-block">
+          <h3>Path readiness score</h3>
+          <div id="score-display"></div>
+          <div id="axes-bars"></div>
+        </section>
+
+        <section class="block phases-block">
+          <h3>Phase roadmap</h3>
+          <ol id="phases-list" class="phases-list"></ol>
+        </section>
+
+        <section class="block split-block">
+          <h3>Weekly hour split</h3>
+          <div id="split-content"></div>
+        </section>
+
+        <section class="block immersion-block">
+          <h3>Immersion tactics</h3>
+          <ol id="immersion-list"></ol>
+        </section>
+
+        <section class="block srs-block">
+          <h3>SRS vocab waves</h3>
+          <table id="srs-table"></table>
+        </section>
+
+        <section class="block landmarks-block">
+          <h3>Cultural landmarks</h3>
+          <ul id="landmarks-list"></ul>
+        </section>
+
+        <section class="block flags-block">
+          <h3>Risk flags</h3>
+          <ul id="flags-list"></ul>
+        </section>
+
+        <section class="block export-block">
+          <h3>Export</h3>
+          <div class="export-actions">
+            <button id="save-btn" class="primary">Save session →</button>
+            <button id="download-md" class="ghost">Download Markdown</button>
+            <button id="download-json" class="ghost">Download JSON</button>
+            <button id="copy-md" class="ghost">Copy Markdown</button>
+          </div>
+          <div class="rating-row">
+            <label>Rating:
+              <select id="rating-select">
+                <option value="">—</option>
+                <option value="5">5 ★</option>
+                <option value="4">4 ★</option>
+                <option value="3">3 ★</option>
+                <option value="2">2 ★</option>
+                <option value="1">1 ★</option>
+              </select>
+            </label>
+            <input id="notes-input" type="text" placeholder="Notes (optional)…" />
+          </div>
+        </section>
+
+        <section class="block markdown-block">
+          <h3>Markdown brief</h3>
+          <pre id="markdown-preview"></pre>
+        </section>
+      </article>
+    </section>
+
+    <section class="panel history-panel">
+      <h2>Saved sessions</h2>
+      <div id="history-list"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    polyglot-pathforge · single-file Flask · local-first · zero API keys · zero LLM
+  </footer>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

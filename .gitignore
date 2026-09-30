@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+polyglot_pathforge.db
+*.db-journal
+.venv/
+venv/
+.DS_Store
+node_modules/
+.env
